@@ -1,5 +1,7 @@
 package RizkiAwantaJordhieJSleepKM;
 
+//package RizkiAwantaJordhieJSleepKM;
+
 /**
  * Write a description of class JSleep here.
  *
@@ -8,7 +10,7 @@ package RizkiAwantaJordhieJSleepKM;
  */
 public class JSleep
 {
-    public static void main(String[]){
+    public static void main(String[] args){
     }
     public static int getHotelId(){
         return 0;
@@ -24,7 +26,8 @@ public class JSleep
             return 0;
         }
         else {
-            return ((beforeDiscount-afterDiscount)/beforeDiscount*100.0f);
+            float diff = beforeDiscount - afterDiscount;
+            return (diff/beforeDiscount)*100;
         }
     }
     public static int getDiscountedPrice(int price, float discountPercentage){
@@ -37,13 +40,14 @@ public class JSleep
         if(discountedPrice <= 0){
             return 0;
         }
-        return (int) (100/(100-discountPercentage))*discountedPrice;
+        float orgPrice = (100/(100-discountPercentage))*discountedPrice;
+        return (int) orgPrice;
     }
     public static float getAdminFeePercentage(){
         return 0.05f;
     }
     public static int getAdminFee(int price){
-        return (int) (price * getAdminFeePercentage())
+        return (int) (price * getAdminFeePercentage());
     }
     public static int getTotalPrice(int price, int numberOfNight){
         return  ((price * numberOfNight) + getAdminFee(price));
