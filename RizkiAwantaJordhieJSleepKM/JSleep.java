@@ -1,13 +1,5 @@
 package RizkiAwantaJordhieJSleepKM;
 
-//package RizkiAwantaJordhieJSleepKM;
-
-/**
- * Write a description of class JSleep here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class JSleep
 {
     public static void main(String[] args){
@@ -50,6 +42,7 @@ public class JSleep
         return (int) (price * getAdminFeePercentage());
     }
     public static int getTotalPrice(int price, int numberOfNight){
-        return  ((price * numberOfNight) + getAdminFee(price));
+        return  ((price * numberOfNight) + getAdminFee(price*numberOfNight));
     }
 }
+
