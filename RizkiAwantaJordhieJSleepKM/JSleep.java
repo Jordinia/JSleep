@@ -1,6 +1,5 @@
 package RizkiAwantaJordhieJSleepKM;
 
-
 /**
  * Write a description of class JSleep here.
  *
@@ -9,27 +8,44 @@ package RizkiAwantaJordhieJSleepKM;
  */
 public class JSleep
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class JSleep
-     */
-    public JSleep()
-    {
-        // initialise instance variables
-        x = 0;
+    public static void main(String[]){
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public static int getHotelId(){
+        return 0;
+    }
+    public static String getHotelName(){
+        return "hotel";
+    }
+    public static boolean isDiscount(){
+        return true;
+    }
+    public static float getDiscountPercentage(int beforeDiscount, int afterDiscount){
+        if(beforeDiscount <= afterDiscount){
+            return 0;
+        }
+        else {
+            return ((beforeDiscount-afterDiscount)/beforeDiscount*100.0f);
+        }
+    }
+    public static int getDiscountedPrice(int price, float discountPercentage){
+        if(discountPercentage >= 100.0f){
+            discountPercentage = 100.0f;
+        }
+        return (int) (price - (price*(discountPercentage/100.0f)));
+    }
+    public static int getOriginalPrice(int discountedPrice, float discountPercentage){
+        if(discountedPrice <= 0){
+            return 0;
+        }
+        return (int) (100/(100-discountPercentage))*discountedPrice;
+    }
+    public static float getAdminFeePercentage(){
+        return 0.05f;
+    }
+    public static int getAdminFee(int price){
+        return (int) (price * getAdminFeePercentage())
+    }
+    public static int getTotalPrice(int price, int numberOfNight){
+        return  ((price * numberOfNight) + getAdminFee(price));
     }
 }
