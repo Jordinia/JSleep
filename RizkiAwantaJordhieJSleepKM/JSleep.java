@@ -1,5 +1,4 @@
 package RizkiAwantaJordhieJSleepKM;
-
 //package RizkiAwantaJordhieJSleepKM;
 
 /**
@@ -51,12 +50,15 @@ public class JSleep
         return  ((price * numberOfNight) + getAdminFee(price*numberOfNight));
     }
     public static void main(String[] args){
-        //createRoom();
-
+        Room tes = createRoom();
+        System.out.println(tes.name);
+        System.out.println(tes.size);
+        System.out.println(tes.price.price);
+        System.out.println(tes.facility);
 
     }
     public static Room createRoom(){
-        return new Room("Kamar", 45, new Price(100000, 5), Facility.Balcony);
+        return new Room("hotel", 30, new Price(100000, 5), Facility.AC);
     }
 
 }
