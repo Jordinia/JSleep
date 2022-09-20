@@ -1,9 +1,15 @@
 package RizkiAwantaJordhieJSleepKM;
 
+//package RizkiAwantaJordhieJSleepKM;
+
+/**
+ * Write a description of class JSleep here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
 public class JSleep
 {
-    public static void main(String[] args){
-    }
     public static int getHotelId(){
         return 0;
     }
@@ -44,5 +50,13 @@ public class JSleep
     public static int getTotalPrice(int price, int numberOfNight){
         return  ((price * numberOfNight) + getAdminFee(price*numberOfNight));
     }
-}
+    public static void main(String[] args){
+        //createRoom();
 
+
+    }
+    public static Room createRoom(){
+        return new Room("Kamar", 45, new Price(100000, 5), Facility.Balcony);
+    }
+
+}
