@@ -2,10 +2,10 @@ package RizkiAwantaJordhieJSleepKM;
 
 
 /**
- * Write a description of class Invoice here.
+ * Invoice class contains invoice information.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Rizki Awanta Jordhie)
+ * @version (1 - 27/09/2022)
  */
 public class Invoice extends Serializable
 {
@@ -15,7 +15,7 @@ public class Invoice extends Serializable
     public String time;
 
     /**
-     * Constructor for objects of class Invoice
+     * Constructors and overloading for objects of class Invoice
      */
     protected Invoice(int id, int buyerId, int renterId, String time)
     {
@@ -33,10 +33,10 @@ public class Invoice extends Serializable
         this.time = time;
     }
     /**
-     * An example of a method - replace this comment with your own
+     * print method used for testcae
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     *
+     * @return    the attributes of this class
      */
     public String print()
     {

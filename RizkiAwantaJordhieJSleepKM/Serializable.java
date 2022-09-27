@@ -2,10 +2,10 @@ package RizkiAwantaJordhieJSleepKM;
 
 
 /**
- * Write a description of class Serializable here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Parent class of Account, Room, Renter, Invoice, Voucher, and Payment.
+ * Contains final variable id.
+ * @author (Rizki Awanta Jordhie)
+ * @version (1 - 27/09/2022)
  */
 public class Serializable
 {

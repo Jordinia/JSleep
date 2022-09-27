@@ -2,10 +2,10 @@ package RizkiAwantaJordhieJSleepKM;
 
 
 /**
- * Write a description of class Payment here.
+ * Payment class contains payment information.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Rizki Awanta Jordhie)
+ * @version (1 - 27/09/2022)
  */
 public class Payment extends Invoice
 {
@@ -32,10 +32,10 @@ public class Payment extends Invoice
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * print method used for testcae
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     *
+     * @return    the attributes of this class
      */
     public String print()
     {

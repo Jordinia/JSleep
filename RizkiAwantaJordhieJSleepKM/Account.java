@@ -2,16 +2,18 @@ package RizkiAwantaJordhieJSleepKM;
 
 
 /**
- * Write a description of class Account here.
+ * Account class contains account information.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Rizki Awanta Jordhie)
+ * @version (2 - 27/09/2022)
  */
 public class Account extends Serializable {
     public String name;
     public String email;
     public String password;
-    
+    /**
+     * Constructor for objects of class Account
+     */
     public Account(int id, String name, String email, String password){
         super(id);
         this.name = name;

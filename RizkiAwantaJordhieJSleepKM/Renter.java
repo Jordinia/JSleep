@@ -2,10 +2,10 @@ package RizkiAwantaJordhieJSleepKM;
 
 
 /**
- * Write a description of class Renter here.
+ * Renter class contains renter information.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Rizki Awanta Jordhie)
+ * @version (2 - 27/09/2022)
  */
 public class Renter extends Serializable
 {
@@ -15,7 +15,7 @@ public class Renter extends Serializable
     public String username;
 
     /**
-     * Constructor for objects of class Renter
+     * Constructors and overloading for objects of class Renter
      */
     public Renter(int id, String username)
     {

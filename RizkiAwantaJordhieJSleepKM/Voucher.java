@@ -2,10 +2,10 @@ package RizkiAwantaJordhieJSleepKM;
 
 
 /**
- * Write a description of class Voucher here.
+ * Voucher class contains voucher information and regulates the usage of discount and rebate.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Rizki Awanta Jordhie)
+ * @version (2 - 27/09/2022)
  */
 public class Voucher extends Serializable {
     public Type type;
@@ -14,7 +14,9 @@ public class Voucher extends Serializable {
     public int code;
     public double minimum;
     private boolean used;
-
+    /**
+     * Constructor for objects of class Voucher
+     */
     public Voucher (int id, String name, int code, Type type, boolean used, double minimum, double cut){
         super(id);
         this.name = name;
