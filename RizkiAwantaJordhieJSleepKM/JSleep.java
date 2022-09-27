@@ -1,11 +1,13 @@
 package RizkiAwantaJordhieJSleepKM;
+
+//package RizkiAwantaJordhieJSleepKM;
 //package RizkiAwantaJordhieJSleepKM;
 
 /**
- * Write a description of class JSleep here.
+ * JSleep.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Rizki Awanta Jordhie)
+ * @version (3 - 27/09/2022)
  */
 public class JSleep
 {
@@ -50,15 +52,21 @@ public class JSleep
         return  ((price * numberOfNight) + getAdminFee(price*numberOfNight));
     }
     public static void main(String[] args){
-        Room tes = createRoom();
+        Payment testRoom = new Payment(1, 1, 1, "time", 1, "from", "to");
+        Invoice testInvoice = new Invoice(2,2,2, "time");
+        System.out.println(testRoom.print());;
+        System.out.println(testInvoice.print());
+        
+        /*Room tes = createRoom();
         System.out.println(tes.name);
         System.out.println(tes.size);
         System.out.println(tes.price.price);
         System.out.println(tes.facility);
-
+        */
+       
     }
     public static Room createRoom(){
-        return new Room("hotel", 30, new Price(100000, 5), Facility.AC);
+        return new Room(1, "hotel", 30, new Price(100000, 5), Facility.AC);
     }
 
 }
