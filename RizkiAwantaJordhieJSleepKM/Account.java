@@ -5,7 +5,7 @@ package RizkiAwantaJordhieJSleepKM;
  * Account class contains account information.
  *
  * @author (Rizki Awanta Jordhie)
- * @version (2 - 27/09/2022)
+ * @version (3 - 29/09/2022)
  */
 public class Account extends Serializable {
     public String name;
@@ -20,4 +20,9 @@ public class Account extends Serializable {
         this.email = email;
         this.password = password;
     }
+
+    public String toString(){
+        return "\nName= " + name + "\nEmail= " + email + "\nPassword= " + password;
+    }
 }
+

@@ -5,7 +5,7 @@ package RizkiAwantaJordhieJSleepKM;
  * Write a description of class Rating here.
  *
  * @author (your name)
- * @version (a version number or a date)
+ * @version (2 - 29/09/2022)
  */
 public class Rating {
     private long total;
@@ -31,5 +31,8 @@ public class Rating {
     }
     public long getTotal(){
         return this.total;
+    }
+    public String toString(){
+        return "\nTotal= " + total + "\nCount= " + count;
     }
 }

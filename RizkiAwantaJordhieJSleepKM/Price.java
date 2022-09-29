@@ -5,7 +5,7 @@ package RizkiAwantaJordhieJSleepKM;
  * Write a description of class Price here.
  *
  * @author (your name)
- * @version (a version number or a date)
+ * @version (3 - 29/09/2022)
  */
 public class Price {
 //    public double rebate;
@@ -20,9 +20,12 @@ public class Price {
     public Price(double price, double discount){
         this.price = price;
         this.discount = discount;
-        //this.rebate = 0;
+        //this.rebate = 0; comment from CS2 PT
     }
-//    public Price (double price, double rebate){
+    public String toString(){
+        return "\nPrice= " + price + "\nDiscount= " + discount;
+    }
+//    public Price (double price, double rebate){ CS2 PT
 //        this.price = price;
 //        this.rebate = rebate;
 //        this.discount = 0;

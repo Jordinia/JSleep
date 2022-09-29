@@ -1,11 +1,10 @@
 package RizkiAwantaJordhieJSleepKM;
 
-
 /**
  * Invoice class contains invoice information.
  *
  * @author (Rizki Awanta Jordhie)
- * @version (1 - 27/09/2022)
+ * @version (2 - 29/09/2022)
  */
 public class Invoice extends Serializable
 {
@@ -13,7 +12,19 @@ public class Invoice extends Serializable
     public int buyerId;
     public int renterId;
     public String time;
-
+    public enum RoomRating{
+        NONE,
+        BAD,
+        NEUTRAL,
+        GOOD
+    }
+    public enum PaymentStatus{
+        FAILED,
+        WAITING,
+        SUCCESS
+    }
+    public RoomRating rating;
+    public PaymentStatus status;
     /**
      * Constructors and overloading for objects of class Invoice
      */
@@ -23,6 +34,8 @@ public class Invoice extends Serializable
         this.buyerId = buyerId;
         this.renterId = renterId;
         this.time = time;
+        this.rating = RoomRating.NONE;
+        this.status = PaymentStatus.WAITING;
     }
 
     public Invoice(int id, Account buyer, Renter renter, String time)
@@ -31,6 +44,8 @@ public class Invoice extends Serializable
         this.buyerId = buyer.id;
         this.renterId = renter.id;
         this.time = time;
+        this.rating = RoomRating.NONE;
+        this.status = PaymentStatus.WAITING;
     }
     /**
      * print method used for testcae
@@ -43,3 +58,4 @@ public class Invoice extends Serializable
         return "\nTime= " + time + "\nbuyerId= " + buyerId + "\nrenterId= " + renterId;
     }
 }
+

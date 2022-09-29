@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=Account
-comment0.text=\r\n\ Account\ class\ contains\ account\ information.\r\n\r\n\ @author\ (Rizki\ Awanta\ Jordhie)\r\n\ @version\ (2\ -\ 27/09/2022)\r\n
+comment0.text=\r\n\ Account\ class\ contains\ account\ information.\r\n\r\n\ @author\ (Rizki\ Awanta\ Jordhie)\r\n\ @version\ (3\ -\ 29/09/2022)\r\n
 comment1.params=id\ name\ email\ password
 comment1.target=Account(int,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Account\r\n
-numComments=2
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3
