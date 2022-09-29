@@ -30,7 +30,9 @@ public class Payment extends Invoice
         this.from = from;
         this.to = to;
     }
-
+    public int getRoomId(){
+        return roomId;
+    }
     /**
      * print method used for testcae
      *
