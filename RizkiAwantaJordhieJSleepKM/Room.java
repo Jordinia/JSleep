@@ -1,12 +1,14 @@
 package RizkiAwantaJordhieJSleepKM;
+//package RizkiAwantaJordhieJSleepKM;
+
 
 /**
  * Account class contains room details information.
  *
  * @author (Rizki Awanta Jordhie)
- * @version (3 - 29/09/2022)
+ * @version (4 - CS4 - 04/10/2022)
  */
-public class Room extends Serializable {
+public class Room extends Serializable implements FileParser{
     public int size;
     public String name;
     public String address;
@@ -29,7 +31,12 @@ public class Room extends Serializable {
         this.address = address;
         this.bedType = BedType.SINGLE;
     }
-
+    public Object write() {
+        return null;
+    }
+    public boolean read(String content){
+        return true;
+    }
     public String toString(){
         return "\nId= " + id + "\nName= " + name +
                 "\nSize= " + size + "\nAddress= " + address +
@@ -39,3 +46,4 @@ public class Room extends Serializable {
 
 
 }
+

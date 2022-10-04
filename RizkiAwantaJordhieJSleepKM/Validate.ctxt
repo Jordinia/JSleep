@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Validate
+comment0.text=\r\n\ Validator\ class\r\n\r\n\ @author\ (Rizki\ Awanta\ Jordhie)\r\n\ @version\ (1\ -\ CS4\ -\ 04/10/2022)\r\n
+comment1.params=list\ value\ less
+comment1.target=java.util.ArrayList\ filter(Price[],\ int,\ boolean)
+numComments=2

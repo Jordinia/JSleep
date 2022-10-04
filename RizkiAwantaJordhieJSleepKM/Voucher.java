@@ -5,9 +5,9 @@ package RizkiAwantaJordhieJSleepKM;
  * Voucher class contains voucher information and regulates the usage of discount and rebate.
  *
  * @author (Rizki Awanta Jordhie)
- * @version (2 - 27/09/2022)
+ * @version (3 - CS4 - 04/10/2022)
  */
-public class Voucher extends Serializable {
+public class Voucher extends Serializable implements FileParser {
     public Type type;
     public double cut;
     public String name;
@@ -53,6 +53,13 @@ public class Voucher extends Serializable {
                 return price.price - (price.price*(this.cut/100.0f));
             }
         }
+    }
+
+    public Object write() {
+        return null;
+    }
+    public boolean read(String content){
+        return true;
     }
 
 }

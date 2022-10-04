@@ -1,13 +1,14 @@
 package RizkiAwantaJordhieJSleepKM;
+//package RizkiAwantaJordhieJSleepKM;
 
 
 /**
  * Account class contains account information.
  *
  * @author (Rizki Awanta Jordhie)
- * @version (3 - 29/09/2022)
+ * @version (4 - CS4 - 04/10/2022)
  */
-public class Account extends Serializable {
+public class Account extends Serializable implements FileParser{
     public String name;
     public String email;
     public String password;
@@ -21,8 +22,17 @@ public class Account extends Serializable {
         this.password = password;
     }
 
+    public Object write() {
+        return null;
+    }
+    public boolean read(String content){
+        return true;
+    }
+
     public String toString(){
         return "\nName= " + name + "\nEmail= " + email + "\nPassword= " + password;
     }
+
 }
+
 

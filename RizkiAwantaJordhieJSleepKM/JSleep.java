@@ -1,10 +1,9 @@
 package RizkiAwantaJordhieJSleepKM;
-
 /**
  * JSleep.
  *
  * @author (Rizki Awanta Jordhie)
- * @version (4 - 29/09/2022)
+ * @version (4 - CS4 - 04/10/2022)
  */
 public class JSleep
 {
@@ -49,6 +48,23 @@ public class JSleep
         return  ((price * numberOfNight) + getAdminFee(price*numberOfNight));
     }
     public static void main(String[] args){
+        Payment testPayment = new Payment(2,2,2,2);
+        System.out.println(testPayment.getTime());
+        System.out.println(testPayment.getDuration());
+        Price[] unfilteredArray = new Price[5];
+        for(int i=0;i < unfilteredArray.length; i++){
+            int j = 5000;
+            unfilteredArray[i] = new Price((i+1)*j);
+        }
+        System.out.println("Price List");
+        for(int i=0;i < unfilteredArray.length; i++){
+            System.out.println(unfilteredArray[i].price);
+        }
+        System.out.println("Below 12000.0");
+        System.out.println(Validate.filter(unfilteredArray, 12000, true));
+        System.out.println("Above 10000.0");
+        System.out.println(Validate.filter(unfilteredArray, 10000, false));
+        /* PT3
         Complaint testComplain = new Complaint(1, "23 August 2022", "Bad Quality");
         Price testPrice = new Price(100000, 20000);
         Room testRoom = new Room(1, "Presidential Suite", 5, testPrice,
@@ -60,6 +76,7 @@ public class JSleep
         System.out.println(testAccount.toString());
         System.out.println(testPrice.toString());
         System.out.println(testRating.toString());
+         */
 
         /* CS3
         Payment testRoom = new Payment(1, 1, 1, "time", 1, "from", "to");
@@ -82,3 +99,4 @@ public class JSleep
 //    }
 
 }
+

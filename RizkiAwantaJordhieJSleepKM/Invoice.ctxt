@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.target=Invoice
-comment0.text=\r\n\ Invoice\ class\ contains\ invoice\ information.\r\n\r\n\ @author\ (Rizki\ Awanta\ Jordhie)\r\n\ @version\ (2\ -\ 29/09/2022)\r\n
-comment1.params=id\ buyerId\ renterId\ time
-comment1.target=Invoice(int,\ int,\ int,\ java.lang.String)
+comment0.text=\r\n\ Invoice\ class\ contains\ invoice\ information.\r\n\r\n\ @author\ (Rizki\ Awanta\ Jordhie)\r\n\ @version\ (3\ -\ CS4\ -\ 04/10/2022)\r\n
+comment1.params=id\ buyerId\ renterId
+comment1.target=Invoice(int,\ int,\ int)
 comment1.text=\r\n\ Constructors\ and\ overloading\ for\ objects\ of\ class\ Invoice\r\n
-comment2.params=id\ buyer\ renter\ time
-comment2.target=Invoice(int,\ Account,\ Renter,\ java.lang.String)
+comment2.params=id\ buyer\ renter
+comment2.target=Invoice(int,\ Account,\ Renter)
 comment3.params=
 comment3.target=java.lang.String\ print()
 comment3.text=\r\n\ print\ method\ used\ for\ testcae\r\n\r\n\r\n\ @return\ \ \ \ the\ attributes\ of\ this\ class\r\n

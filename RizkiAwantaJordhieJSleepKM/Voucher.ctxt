@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Voucher
-comment0.text=\r\n\ Voucher\ class\ contains\ voucher\ information\ and\ regulates\ the\ usage\ of\ discount\ and\ rebate.\r\n\r\n\ @author\ (Rizki\ Awanta\ Jordhie)\r\n\ @version\ (2\ -\ 27/09/2022)\r\n
+comment0.text=\r\n\ Voucher\ class\ contains\ voucher\ information\ and\ regulates\ the\ usage\ of\ discount\ and\ rebate.\r\n\r\n\ @author\ (Rizki\ Awanta\ Jordhie)\r\n\ @version\ (3\ -\ CS4\ -\ 04/10/2022)\r\n
 comment1.params=id\ name\ code\ type\ used\ minimum\ cut
 comment1.target=Voucher(int,\ java.lang.String,\ int,\ Type,\ boolean,\ double,\ double)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Voucher\r\n
@@ -10,4 +10,8 @@ comment3.params=price
 comment3.target=boolean\ canApply(Price)
 comment4.params=price
 comment4.target=double\ apply(Price)
-numComments=5
+comment5.params=
+comment5.target=java.lang.Object\ write()
+comment6.params=content
+comment6.target=boolean\ read(java.lang.String)
+numComments=7
