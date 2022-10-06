@@ -1,12 +1,15 @@
 package RizkiAwantaJordhieJSleepKM;
 
+//package RizkiAwantaJordhieJSleepKM;
+
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Invoice class contains invoice information.
  *
  * @author (Rizki Awanta Jordhie)
- * @version (3 - CS4 - 04/10/2022)
+ * @version (4 - PT4 - 06/10/2022)
  */
 public class Invoice extends Serializable
 {
@@ -14,7 +17,7 @@ public class Invoice extends Serializable
     public int buyerId;
     public int renterId;
     //public String time;
-    public Calendar time;
+    public Date time;
     public enum RoomRating{
         NONE,
         BAD,
@@ -38,7 +41,7 @@ public class Invoice extends Serializable
         this.renterId = renterId;
         this.rating = RoomRating.NONE;
         this.status = PaymentStatus.WAITING;
-        this.time = Calendar.getInstance();
+        this.time = new Date();
     }
 
     public Invoice(int id, Account buyer, Renter renter)
@@ -48,7 +51,7 @@ public class Invoice extends Serializable
         this.renterId = renter.id;
         this.rating = RoomRating.NONE;
         this.status = PaymentStatus.WAITING;
-        this.time = Calendar.getInstance();
+        this.time = new Date();
     }
     /**
      * print method used for testcae
@@ -61,4 +64,5 @@ public class Invoice extends Serializable
         return "\nTime= " + time + "\nbuyerId= " + buyerId + "\nrenterId= " + renterId;
     }
 }
+
 

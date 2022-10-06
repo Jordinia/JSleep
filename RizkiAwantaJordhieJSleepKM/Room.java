@@ -2,11 +2,14 @@ package RizkiAwantaJordhieJSleepKM;
 //package RizkiAwantaJordhieJSleepKM;
 
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  * Account class contains room details information.
  *
  * @author (Rizki Awanta Jordhie)
- * @version (4 - CS4 - 04/10/2022)
+ * @version (5 - PT4 - 06/10/2022)
  */
 public class Room extends Serializable implements FileParser{
     public int size;
@@ -17,6 +20,7 @@ public class Room extends Serializable implements FileParser{
     public Price price;
     public City city;
 
+    public ArrayList<Date> booked;
 
     /**
      * Constructor for objects of class Room
@@ -30,7 +34,9 @@ public class Room extends Serializable implements FileParser{
         this.city = city;
         this.address = address;
         this.bedType = BedType.SINGLE;
+        this.booked = new ArrayList<Date>();
     }
+
     public Object write() {
         return null;
     }
@@ -46,4 +52,5 @@ public class Room extends Serializable implements FileParser{
 
 
 }
+
 

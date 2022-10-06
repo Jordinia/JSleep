@@ -3,8 +3,10 @@ package RizkiAwantaJordhieJSleepKM;
  * JSleep.
  *
  * @author (Rizki Awanta Jordhie)
- * @version (4 - CS4 - 04/10/2022)
+ * @version (5 - PT4 - 06/10/2022)
  */
+//import java.util.Date;
+import java.sql.*;
 public class JSleep
 {
     public static int getHotelId(){
@@ -48,55 +50,31 @@ public class JSleep
         return  ((price * numberOfNight) + getAdminFee(price*numberOfNight));
     }
     public static void main(String[] args){
-        Payment testPayment = new Payment(2,2,2,2);
-        System.out.println(testPayment.getTime());
-        System.out.println(testPayment.getDuration());
-        Price[] unfilteredArray = new Price[5];
-        for(int i=0;i < unfilteredArray.length; i++){
-            int j = 5000;
-            unfilteredArray[i] = new Price((i+1)*j);
-        }
-        System.out.println("Price List");
-        for(int i=0;i < unfilteredArray.length; i++){
-            System.out.println(unfilteredArray[i].price);
-        }
-        System.out.println("Below 12000.0");
-        System.out.println(Validate.filter(unfilteredArray, 12000, true));
-        System.out.println("Above 10000.0");
-        System.out.println(Validate.filter(unfilteredArray, 10000, false));
-        /* PT3
-        Complaint testComplain = new Complaint(1, "23 August 2022", "Bad Quality");
-        Price testPrice = new Price(100000, 20000);
-        Room testRoom = new Room(1, "Presidential Suite", 5, testPrice,
-                Facility.FitnessCenter, City.DEPOK, "JL. Margonda Raya");
-        Account testAccount = new Account(1, "Bob", "bob@gmail.com", "bob");
-        Rating testRating = new Rating();
-        System.out.println(testComplain.toString());
-        System.out.println(testRoom.toString());
-        System.out.println(testAccount.toString());
-        System.out.println(testPrice.toString());
-        System.out.println(testRating.toString());
-         */
-
-        /* CS3
-        Payment testRoom = new Payment(1, 1, 1, "time", 1, "from", "to");
-        Invoice testInvoice = new Invoice(2,2,2, "time");
-        System.out.println(testRoom.print());;
-        System.out.println(testInvoice.print());
-        */
-        
-        /* CS2
-        Room tes = createRoom();
-        System.out.println(tes.name);
-        System.out.println(tes.size);
-        System.out.println(tes.price.price);
-        System.out.println(tes.facility);
-        */
-       
+        Room RoomA = JSleep.createRoom();
+        Room RoomB = JSleep.createRoom();
+        System.out.println("Membuat booking dari tanggal 15 hingga 18");
+        Date start = Date.valueOf("2022-8-15");
+        Date end = Date.valueOf("2022-8-20");
+        System.out.println(Payment.makeBooking(start, end,RoomA));
+        System.out.println("Membuat booking dari tanggal 15 hingga 18");
+        Date start2 = Date.valueOf("2022-8-18");
+        Date end2 = Date.valueOf("2022-8-20");
+        System.out.println(Payment.makeBooking(start2, end2,RoomA));
+        System.out.println("Membuat booking dari tanggal 15 hingga 18 untuk kamar berbeda");
+        Date start3 = Date.valueOf("2022-8-18");
+        Date end3 = Date.valueOf("2022-8-20");
+        System.out.println(Payment.makeBooking(start3, end3,RoomB));
+        System.out.println("Membuat booking dari tanggal 20 hingga 15");
+        Date start4 = Date.valueOf("2022-8-20");
+        Date end4 = Date.valueOf("2022-8-15");
+        System.out.println(Payment.makeBooking(start4, end4,RoomA));
     }
-//    public static Room createRoom(){ CS2
-//        return new Room(1, "hotel", 30, new Price(100000, 5), Facility.AC);
-//    }
+    public static Room createRoom(){
+        Price price = new Price(100000,5);
+        Room room = new Room(12, "Restaurant", 30,price,Facility.AC,City.JAKARTA,"Jl.Medan");
+        return room;
+    }
 
 }
+
 
