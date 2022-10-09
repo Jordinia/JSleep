@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Serializable
-comment0.text=\r\n\ Parent\ class\ of\ Account,\ Room,\ Renter,\ Invoice,\ Voucher,\ and\ Payment.\r\n\ Contains\ final\ variable\ id.\r\n\ @author\ (Rizki\ Awanta\ Jordhie)\r\n\ @version\ (1\ -\ 27/09/2022)\r\n
-comment1.params=id
-comment1.target=Serializable(int)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Serializable\r\n
-numComments=2
