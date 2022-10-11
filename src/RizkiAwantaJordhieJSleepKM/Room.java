@@ -25,8 +25,8 @@ public class Room extends Serializable implements FileParser{
     /**
      * Constructor for objects of class Room
      */
-    public Room (int id, String name, int size, Price price, Facility facility, City city, String address){
-        super(id);
+    public Room (String name, int size, Price price, Facility facility, City city, String address){
+        //super(id);
         this.size = size;
         this.name = name;
         this.facility = facility;

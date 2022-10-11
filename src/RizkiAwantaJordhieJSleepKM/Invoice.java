@@ -34,9 +34,9 @@ public class Invoice extends Serializable
     /**
      * Constructors and overloading for objects of class Invoice
      */
-    protected Invoice(int id, int buyerId, int renterId)
+    protected Invoice(int buyerId, int renterId)
     {
-        super(id);
+        //super(id);
         this.buyerId = buyerId;
         this.renterId = renterId;
         this.rating = RoomRating.NONE;
@@ -44,9 +44,9 @@ public class Invoice extends Serializable
         this.time = new Date();
     }
 
-    public Invoice(int id, Account buyer, Renter renter)
+    public Invoice(Account buyer, Renter renter)
     {
-        super(id);
+        //super(id);
         this.buyerId = buyer.id;
         this.renterId = renter.id;
         this.rating = RoomRating.NONE;

@@ -17,26 +17,26 @@ public class Renter extends Serializable
     /**
      * Constructors and overloading for objects of class Renter
      */
-    public Renter(int id, String username)
+    public Renter(String username)
     {
-        super(id);
+        //super(id);
         this.username = username;
     }
-    public Renter(int id, String username, String address)
+    public Renter(String username, String address)
     {
-        super(id);
+//        super(id);
         this.username = username;
         this.address = address;
     }
-    public Renter(int id, String username, int phoneNumber)
+    public Renter(String username, int phoneNumber)
     {
-        super(id);
+//        super(id);
         this.username = username;
         this.phoneNumber = phoneNumber;
     }
-    public Renter(int id, String username, int phoneNumber, String address)
+    public Renter(String username, int phoneNumber, String address)
     {
-        super(id);
+//        super(id);
         this.username = username;
         this.phoneNumber = phoneNumber;
         this.address = address;

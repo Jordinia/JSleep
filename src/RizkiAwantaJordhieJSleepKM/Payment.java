@@ -22,16 +22,16 @@ public class Payment extends Invoice
     /**
      * Constructor for objects of class Payment
      */
-    public Payment(int id, int buyerId, int renterId, int roomId, Date from, Date to)
+    public Payment(int buyerId, int renterId, int roomId, Date from, Date to)
     {
-        super(id, buyerId, renterId);
+        super(buyerId, renterId);
         this.roomId = roomId;
         this.from = from;
         this.to = to;
     }
-    public Payment(int id, Account buyer, Renter renter, int roomId)
+    public Payment(Account buyer, Renter renter, int roomId, Date from, Date to)
     {
-        super(id, buyer, renter);
+        super(buyer, renter);
         this.roomId = roomId;
         this.from = from;
         this.to = to;
@@ -66,20 +66,35 @@ public class Payment extends Invoice
     public static boolean availability(Date from, Date to, Room room){
         if(room.booked.isEmpty()){
             return true;
+        } else if(from.after(to) || to.before(from) || from.equals(to)){
+            return false;
         } else {
-            if(from.after(to) || to.before(from)){
-                return false;
-            }
-            Date temp;
-            for (int i = 0; i <= room.booked.size(); i++){
-                temp = room.booked.get(i);
-                if(temp.after(from) && temp.before(to) || temp.equals(from)){
+            for (Date temp : room.booked) {
+                if (from.equals(temp)) {
+                    return false;
+                } else if(from.before(temp) && to.after(temp)){
                     return false;
                 }
             }
             return true;
         }
+//        if(room.booked.isEmpty()){ PT4
+//            return true;
+//        } else {
+//            if(from.after(to) || to.before(from)){
+//                return false;
+//            }
+//            Date temp;
+//            for (int i = 0; i <= room.booked.size(); i++){
+//                temp = room.booked.get(i);
+//                if(temp.after(from) && temp.before(to) || temp.equals(from)){
+//                    return false;
+//                }
+//            }
+//            return true;
+//        }
     }
+
     /**
      * print method used for testcae
      *
