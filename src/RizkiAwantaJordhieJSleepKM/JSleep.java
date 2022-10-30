@@ -5,9 +5,11 @@ package RizkiAwantaJordhieJSleepKM;
  * @author (Rizki Awanta Jordhie)
  * @version (5 - PT4 - 06/10/2022)
  */
-//import java.util.Date;
-import java.sql.*;
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
+import com.google.gson.*;
 
 public class JSleep
 {
@@ -51,13 +53,31 @@ public class JSleep
     public static int getTotalPrice(int price, int numberOfNight){
         return  ((price * numberOfNight) + getAdminFee(price*numberOfNight));
     }
+    class Country{
+        public String name;
+        public int population;
+        public List<String> listOfStates;
+    }
     public static void main(String[] args){
-        ArrayList<Room> RoomSerialized = new ArrayList<>();
-
-        for(int i = 0; i <  5; i++){
-            RoomSerialized.add(i, createRoom());
-            System.out.println(RoomSerialized.get(i).toString());
+        String filepath= "C:\\Users\\Rizky Awanta Jordhie\\Documents\\All-Files\\TUGAS\\UI\\2-Pembelajaran\\3-Kuliah\\Materi x Buku\\Semester 3\\Object Oriented Programming\\Praktikum OOP\\Code\\JSleep\\city.json";
+        Gson gson = new Gson();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(filepath));
+            Country input = gson.fromJson(br, Country.class);
+            System.out.println("name: " + input.name);
+            System.out.println("population: " + input.population);
+            System.out.println("states :");
+            input.listOfStates.forEach(state -> System.out.println(state));
         }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        //        ArrayList<Room> RoomSerialized = new ArrayList<>();
+//
+//        for(int i = 0; i <  5; i++){
+//            RoomSerialized.add(i, createRoom());
+//            System.out.println(RoomSerialized.get(i).toString());
+//        }
 //        Room RoomA = JSleep.createRoom();
 //        Room RoomB = JSleep.createRoom();
 //        System.out.println("Membuat booking dari tanggal 15 hingga 18");
