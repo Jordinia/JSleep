@@ -8,7 +8,7 @@ package RizkiAwantaJordhieJSleepKM;
  * @author (Rizki Awanta Jordhie)
  * @version (4 - CS4 - 04/10/2022)
  */
-public class Account extends Serializable implements FileParser{
+public class Account extends Serializable{
     public String name;
     public String email;
     public String password;

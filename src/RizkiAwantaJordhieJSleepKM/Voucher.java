@@ -7,7 +7,7 @@ package RizkiAwantaJordhieJSleepKM;
  * @author (Rizki Awanta Jordhie)
  * @version (3 - CS4 - 04/10/2022)
  */
-public class Voucher extends Serializable implements FileParser {
+public class Voucher extends Serializable {
     public Type type;
     public double cut;
     public String name;

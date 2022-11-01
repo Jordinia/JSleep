@@ -1,10 +1,6 @@
 package RizkiAwantaJordhieJSleepKM;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
 
 /**
  * Algorithm class
@@ -55,38 +51,35 @@ public class Algorithm {
 
     // count
     public static <T> int count(T[] array, T value) {
-        Iterator<T> it = Arrays.stream(array).iterator();
-        //Predicate<T> pred = value::equals;
+        final Iterator<T> it = Arrays.stream(array).iterator();
         return count(it, value);
     }
 
     public static <T> int count(Iterable<T> iterable, T value) {
-        Predicate<T> pred = value::equals;
-        return count(iterable, pred);
+        final Iterator<T> it = iterable.iterator();
+        return count(it, value);
     }
 
     public static <T> int count(Iterator<T> iterator, T value) {
-        Predicate<T> pred = value::equals;
+        final Predicate<T> pred = value::equals;
         return count(iterator, pred);
     }
 
     public static <T> int count(T[] array, Predicate<T> pred) {
-        Iterator<T> it = Arrays.stream(array).iterator();
+        final Iterator<T> it = Arrays.stream(array).iterator();
         return count(it, pred);
     }
 
     public static <T> int count(Iterable<T> iterable, Predicate<T> pred) {
-        Iterator<T> it = iterable.iterator();
+        final Iterator<T> it = iterable.iterator();
         return count(it, pred);
     }
 
     public static <T> int count(Iterator<T> iterator, Predicate<T> pred) {
         int count = 0;
-        while (iterator.hasNext()) {
-            if (pred.predicate(iterator.next())) {
-                count++;
-            }
-        }
+        while (iterator.hasNext())
+            if (pred.predicate(iterator.next()))
+                ++count;
         return count;
     }
 
@@ -162,7 +155,8 @@ public class Algorithm {
 
     //paginate
     public static <T> List<T> paginate(T[] array, int page, int pageSize, Predicate<T> pred) {
-        return Arrays.stream(array).filter(pred::predicate).skip(pageSize * page).limit(pageSize).collect(Collectors.toList());
+        final Iterator<T> it = Arrays.stream(array).iterator();
+        return paginate(it, page, pageSize, pred);
     }
 
     public static <T> List<T> paginate(Iterable<T> iterable, int page, int pageSize, Predicate<T> pred) {
@@ -170,18 +164,34 @@ public class Algorithm {
     }
 
     public static <T> List<T> paginate(Iterator<T> iterator, int page, int pageSize, Predicate<T> pred) {
-        int iteration = 0;
-        int firstIndex = page * pageSize;
+        int occurences = 0;
+        int startingIdx = page * pageSize;
         List<T> pageList = new ArrayList<>(pageSize);
-        while (iterator.hasNext()) {
-            T tempObj = iterator.next();
-            if (pred.predicate(tempObj)) {
-                if (iteration >= firstIndex && iteration < (pageSize + firstIndex)) {
-                    pageList.add(tempObj);
-                }
-                iteration++;
-            }
+        // skip first occurrences of element
+        while (iterator.hasNext() && occurences < startingIdx) {
+            T obj = iterator.next();
+            if (pred.predicate(obj))
+                ++occurences;
+        }
+        // get the next occurrences of element
+        while (iterator.hasNext() && pageList.size() < pageSize) {
+            T obj = iterator.next();
+            if (pred.predicate(obj))
+                pageList.add(obj);
         }
         return pageList;
+        //        int iteration = 0;
+//        int firstIndex = page * pageSize;
+//        List<T> pageList = new ArrayList<>(pageSize);
+//        while (iterator.hasNext()) {
+//            T tempObj = iterator.next();
+//            if (pred.predicate(tempObj)) {
+//                if (iteration >= firstIndex && iteration < (pageSize + firstIndex)) {
+//                    pageList.add(tempObj);
+//                }
+//                iteration++;
+//            }
+//        }
+//        return pageList;
     }
 }

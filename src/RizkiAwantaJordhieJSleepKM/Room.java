@@ -11,8 +11,9 @@ import java.util.Date;
  * @author (Rizki Awanta Jordhie)
  * @version (5 - PT4 - 06/10/2022)
  */
-public class Room extends Serializable implements FileParser{
+public class Room extends Serializable{
     public int size;
+    public int accountId;
     public String name;
     public String address;
     public Facility facility;
@@ -25,8 +26,9 @@ public class Room extends Serializable implements FileParser{
     /**
      * Constructor for objects of class Room
      */
-    public Room (String name, int size, Price price, Facility facility, City city, String address){
+    public Room (int accountId, String name, int size, Price price, Facility facility, City city, String address){
         //super(id);
+        this.accountId = accountId;
         this.size = size;
         this.name = name;
         this.facility = facility;
