@@ -1,5 +1,7 @@
 package com.RizkiAwantaJordhieJSleepKM;
 
+import com.RizkiAwantaJordhieJSleepKM.dbjson.Serializable;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -9,7 +11,7 @@ import java.util.Date;
  * @author (Rizki Awanta Jordhie)
  * @version (5 - PT4 - 06/10/2022)
  */
-public class Room extends Serializable{
+public class Room extends Serializable {
     public int size;
     public int accountId;
     public String name;

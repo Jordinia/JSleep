@@ -1,6 +1,8 @@
 package com.RizkiAwantaJordhieJSleepKM;
 
 
+import com.RizkiAwantaJordhieJSleepKM.dbjson.Serializable;
+
 /**
  * Voucher class contains voucher information and regulates the usage of discount and rebate.
  *

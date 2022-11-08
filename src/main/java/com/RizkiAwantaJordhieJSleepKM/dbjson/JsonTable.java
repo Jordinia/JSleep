@@ -1,4 +1,4 @@
-package com.RizkiAwantaJordhieJSleepKM;
+package com.RizkiAwantaJordhieJSleepKM.dbjson;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;

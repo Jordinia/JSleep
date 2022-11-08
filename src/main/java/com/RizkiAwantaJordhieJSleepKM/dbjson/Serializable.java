@@ -1,7 +1,6 @@
-package com.RizkiAwantaJordhieJSleepKM;
+package com.RizkiAwantaJordhieJSleepKM.dbjson;
 
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -10,7 +9,7 @@ import java.util.HashMap;
  * @author (Rizki Awanta Jordhie)
  * @version (2 - CS5 - 11/10/2022)
  */
-public class Serializable
+public class Serializable implements Comparable<Serializable>
 {
     public final int id;
     private static HashMap<Class<?>, Integer> mapCounter = new HashMap<>();

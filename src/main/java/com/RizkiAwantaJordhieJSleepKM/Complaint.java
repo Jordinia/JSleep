@@ -1,6 +1,8 @@
 package com.RizkiAwantaJordhieJSleepKM;
 
 
+import com.RizkiAwantaJordhieJSleepKM.dbjson.Serializable;
+
 /**
  * Write a description of class Complaint here.
  *
