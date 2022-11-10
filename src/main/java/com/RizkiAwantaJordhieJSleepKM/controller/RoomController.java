@@ -21,7 +21,7 @@ public class RoomController implements BasicGetController<Room> {
         return Algorithm.<Room>paginate(getJsonTable(), page, pageSize, pred -> pred.id == id);
     }
 
-    @GetMapping("/create")
+    @PostMapping("/create")
     public Room create(
             @RequestParam int accountId,
             @RequestParam String name,
