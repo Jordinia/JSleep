@@ -7,32 +7,39 @@ package com.RizkiAwantaJordhieJSleepKM;
  */
 import java.util.List;
 
+import com.RizkiAwantaJordhieJSleepKM.dbjson.JsonDBEngine;
 import com.RizkiAwantaJordhieJSleepKM.dbjson.JsonTable;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class JSleep
 {
 
     public static void main(String[] args){
+        JsonDBEngine.Run(JSleep.class);
+        SpringApplication.run(JSleep.class, args);
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> JsonDBEngine.join()));
 //        Account testRegex = new Account("JOR","jordhie@gmail.com","Abcd12345");
 //        Account testRegexfalse = new Account("JOR FALSE"," jordhie@ui.ac.id","Abcd12345");
 //        System.out.println(testRegex.validate());
 //        System.out.println(testRegexfalse.validate());
-        try {
-            String filepath = "json\\account.json";
-            JsonTable<Account> tableAccount = new JsonTable<Account>(Account.class, filepath);
-            Account account = new Account("name","email","password");
-            tableAccount.add(account);
-            JsonTable.writeJson(tableAccount, filepath);
-
-            tableAccount = new JsonTable<Account>(Account.class, filepath);
-            tableAccount.forEach(acc -> System.out.println(acc.toString()));
-        }
-        catch (Throwable t) {
-            t.printStackTrace();
-        }
-        for (int i = 0; i < 10; i++){
-            ThreadingObject thread = new ThreadingObject("Thread " + i);
-        }
+//        try {
+//            String filepath = "json\\account.json";
+//            JsonTable<Account> tableAccount = new JsonTable<Account>(Account.class, filepath);
+//            Account account = new Account("name","email","password");
+//            tableAccount.add(account);
+//            JsonTable.writeJson(tableAccount, filepath);
+//
+//            tableAccount = new JsonTable<Account>(Account.class, filepath);
+//            tableAccount.forEach(acc -> System.out.println(acc.toString()));
+//        }
+//        catch (Throwable t) {
+//            t.printStackTrace();
+//        }
+//        for (int i = 0; i < 10; i++){
+//            ThreadingObject thread = new ThreadingObject("Thread " + i);
+//        }
         // CS6
 //        Renter testRegex = new Renter("Netlab_", "081234567890", "Jl Margonda Raya");
 //        System.out.println(testRegex.validate());

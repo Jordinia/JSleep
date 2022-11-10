@@ -4,7 +4,6 @@ package com.RizkiAwantaJordhieJSleepKM;
 
 import com.RizkiAwantaJordhieJSleepKM.dbjson.Serializable;
 
-import java.util.Date;
 
 /**
  * Invoice class contains invoice information.
@@ -18,7 +17,6 @@ public class Invoice extends Serializable
     public int buyerId;
     public int renterId;
     //public String time;
-    public Date time;
     public enum RoomRating{
         NONE,
         BAD,
@@ -42,7 +40,6 @@ public class Invoice extends Serializable
         this.renterId = renterId;
         this.rating = RoomRating.NONE;
         this.status = PaymentStatus.WAITING;
-        this.time = new Date();
     }
 
     public Invoice(Account buyer, Renter renter)
@@ -52,7 +49,6 @@ public class Invoice extends Serializable
         this.renterId = renter.id;
         this.rating = RoomRating.NONE;
         this.status = PaymentStatus.WAITING;
-        this.time = new Date();
     }
     /**
      * print method used for testcae
@@ -62,7 +58,7 @@ public class Invoice extends Serializable
      */
     public String print()
     {
-        return "\nTime= " + time + "\nbuyerId= " + buyerId + "\nrenterId= " + renterId;
+        return "\nbuyerId= " + buyerId + "\nrenterId= " + renterId;
     }
 }
 

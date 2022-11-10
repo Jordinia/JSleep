@@ -22,12 +22,12 @@ public class Serializable implements Comparable<Serializable>
             idCount = 0;
         } else {
             idCount++;
+            mapCounter.put(getClass(), idCount);
         }
-        mapCounter.put(getClass(), idCount);
         this.id = idCount;
     }
-    public static <T extends Serializable> int setClosingId(Class<T> inpClass, int id){
-        return mapCounter.put(inpClass, id);
+    public static <T extends Serializable> Integer setClosingId(Class<T> obj, int data){
+        return mapCounter.put(obj,data);
     }
     public static <T extends Serializable> int getClosingId(Class<T> inpClass){
         return mapCounter.get(inpClass);

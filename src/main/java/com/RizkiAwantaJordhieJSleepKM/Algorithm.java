@@ -40,11 +40,11 @@ public class Algorithm {
     }
 
     public static <T> List<T> collect(Iterator<T> iterator, Predicate<T> pred) {
-        List<T> list = new ArrayList<T>();
+        ArrayList<T> list = new ArrayList<>();
         while (iterator.hasNext()) {
-            T tempObj = iterator.next();
-            if (pred.predicate(tempObj))
-                list.add(tempObj);
+            T current = iterator.next();
+            if (pred.predicate(current))
+                list.add(current);
         }
         return list;
     }
@@ -111,9 +111,9 @@ public class Algorithm {
 
     public static <T> T find(Iterator<T> iterator, Predicate<T> pred) {
         while (iterator.hasNext()) {
-            T tempObj = iterator.next();
-            if (pred.predicate(tempObj))
-                return tempObj;
+            T current = iterator.next();
+            if (pred.predicate(current))
+                return current;
         }
         return null;
     }
@@ -160,7 +160,8 @@ public class Algorithm {
     }
 
     public static <T> List<T> paginate(Iterable<T> iterable, int page, int pageSize, Predicate<T> pred) {
-        return paginate(iterable.iterator(), page, pageSize, pred);
+        final Iterator<T> it = iterable.iterator();
+        return paginate(it, page, pageSize, pred);
     }
 
     public static <T> List<T> paginate(Iterator<T> iterator, int page, int pageSize, Predicate<T> pred) {
@@ -180,18 +181,5 @@ public class Algorithm {
                 pageList.add(obj);
         }
         return pageList;
-        //        int iteration = 0;
-//        int firstIndex = page * pageSize;
-//        List<T> pageList = new ArrayList<>(pageSize);
-//        while (iterator.hasNext()) {
-//            T tempObj = iterator.next();
-//            if (pred.predicate(tempObj)) {
-//                if (iteration >= firstIndex && iteration < (pageSize + firstIndex)) {
-//                    pageList.add(tempObj);
-//                }
-//                iteration++;
-//            }
-//        }
-//        return pageList;
     }
 }

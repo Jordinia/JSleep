@@ -45,10 +45,7 @@ public class Payment extends Invoice
     public int getRoomId() {
         return this.roomId;
     }
-    public String getTime(){
-        SimpleDateFormat dateTime = new SimpleDateFormat("dd MMMMM yyyy");
-        return  "Formatted Date = " + dateTime.format(this.time.getTime());
-    }
+
     public static boolean makeBooking(Date from, Date to, Room room){
         if(availability(from, to, room)){
             while (from.before(to)){

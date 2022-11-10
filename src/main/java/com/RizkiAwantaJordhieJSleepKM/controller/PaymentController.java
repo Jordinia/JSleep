@@ -28,5 +28,21 @@ public class PaymentController implements BasicGetController<Payment> {
 
         return null;
     }
-    
+
+    @PostMapping("/accept")
+    public boolean accept( @RequestParam int id ){
+        return false;
+    }
+
+    @PostMapping("/cancel")
+    public boolean cancel(@RequestParam int id  ){
+        return false;
+    }
+
+    @PostMapping("/submit")
+    public boolean submit( @RequestParam int id ){
+        return false;
+    }
+
+
 }
