@@ -39,6 +39,9 @@ public class RoomController implements BasicGetController<Room> {
         roomTable.add(room);
         return room;
     }
+
+//    @GetMapping
+//
     @Override
     public JsonTable<Room> getJsonTable() {
         return roomTable;

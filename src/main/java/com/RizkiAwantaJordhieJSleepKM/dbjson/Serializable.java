@@ -1,47 +1,45 @@
 package com.RizkiAwantaJordhieJSleepKM.dbjson;
 
-
-import java.util.HashMap;
-
 /**
  * Parent class of Account, Room, Renter, Invoice, Voucher, and Payment.
  * Contains final variable id.
  * @author (Rizki Awanta Jordhie)
  * @version (2 - CS5 - 11/10/2022)
  */
-public class Serializable implements Comparable<Serializable>
-{
+import java.util.HashMap;
+
+public class Serializable implements Comparable<Serializable> {
     public final int id;
-    private static HashMap<Class<?>, Integer> mapCounter = new HashMap<>();
-    /**
-     * Constructor for objects of class Serializable
-     */
-    protected Serializable(){
-        Integer idCount = mapCounter.get(getClass());
-        if (idCount == null){
-            idCount = 0;
-        } else {
-            idCount++;
-            mapCounter.put(getClass(), idCount);
+    private static HashMap<Class<?>, Integer> mapCounter = new HashMap<Class<?>, Integer>();
+
+    protected Serializable() {
+        Integer counter = mapCounter.get(getClass());
+        if (counter == null){
+            counter =  0;
         }
-        this.id = idCount;
-    }
-    public static <T extends Serializable> Integer setClosingId(Class<T> obj, int data){
-        return mapCounter.put(obj,data);
-    }
-    public static <T extends Serializable> int getClosingId(Class<T> inpClass){
-        return mapCounter.get(inpClass);
+        else{
+            counter +=1;
+        }
+        mapCounter.put(getClass(), counter);
+        this.id = counter;
     }
 
-    //@Override
-    public int compareTo(Serializable temp){
-        return Integer.compare(this.id, temp.id);
+    public static <T extends Serializable> Integer setClosingId(Class<T> clazz, int id) { return mapCounter.put(clazz, id); }
+
+    public static <T extends Serializable> Integer getClosingId(Class<T> clazz) { return mapCounter.get(clazz); }
+
+    public boolean equals(Object other)
+    {
+        return other instanceof Serializable && ((Serializable) other).id == id;
     }
 
-    public boolean equals(Object temp){
-        return (temp instanceof Serializable) && (((Serializable) temp).id == this.id);
+    public boolean equals(Serializable other)
+    {
+        return other.id == id;
     }
-    public boolean equals(Serializable temp){
-        return temp.id == id;
+
+    public int compareTo(Serializable other)
+    {
+        return Integer.compare(this.id, other.id);
     }
 }

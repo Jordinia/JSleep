@@ -32,11 +32,9 @@ public class AccountController implements BasicGetController<Account>
     public final static Pattern REGEX_PATTERN_PASSWORD = Pattern.compile(REGEX_PASSWORD) ;
     public final static Pattern REGEX_PATTERN_EMAIL = Pattern.compile(REGEX_EMAIL);
 
-
     public JsonTable<Account> getJsonTable() {
         return accountTable;
     }
-
     @PostMapping("/login")
     Account login(
             @RequestParam String email,
@@ -69,12 +67,14 @@ public class AccountController implements BasicGetController<Account>
     }
 
     @PostMapping("/{id}/registerRenter")
-    Renter registerRenter(@PathVariable int id, @RequestParam String username, @RequestParam String address,
+    Renter registerRenter(@PathVariable int id,
+                          @RequestParam String username,
+                          @RequestParam String address,
                           @RequestParam String phoneNumber ){
 
         Account temp = Algorithm.<Account>find(accountTable,pred -> pred.id == id);
         if(temp.renter == null && temp != null){
-            temp.renter = new Renter(username, address, phoneNumber);
+            temp.renter = new Renter(username,phoneNumber,address);
             return temp.renter;
         }
         else{
@@ -83,7 +83,8 @@ public class AccountController implements BasicGetController<Account>
     }
 
     @PostMapping("/{id}/topUp")
-    boolean topUp(@PathVariable int id, @RequestParam double balance ){
+    boolean topUp(@PathVariable int id,
+                  @RequestParam double balance ){
         Account account = Algorithm.<Account>find(accountTable, acc -> id == acc.id);
         if (account != null){
             account.balance += balance;
