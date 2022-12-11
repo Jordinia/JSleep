@@ -2,10 +2,9 @@ package com.RizkiAwantaJordhieJSleepKM;
 
 
 /**
- * Enumeration class BedType - write a description of the enum class here
+ * Enumeration class BedType
  *
- * @author (your name here)
- * @version (1 - 29/09/2022)
+ * @author Rizki Awanta Jordhie
  */
 public enum BedType{
     SINGLE,

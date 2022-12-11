@@ -10,8 +10,8 @@ import java.util.Date;
 /**
  * Payment class contains payment information.
  *
- * @author (Rizki Awanta Jordhie)
- * @version (3 - PT4 - 06/10/2022)
+ * @author Rizki Awanta Jordhie
+ * @version 3 - PT4 - 06/10/2022
  */
 public class Payment extends Invoice
 {
@@ -19,8 +19,15 @@ public class Payment extends Invoice
     public Date to;
     public Date from;
     private int roomId;
+
     /**
-     * Constructor for objects of class Payment
+     * Constructor for a Payment instance with the given buyer and renter IDs, room ID, and dates.
+     *
+     * @param buyerId the ID of the buyer
+     * @param renterId the ID of the renter
+     * @param roomId the ID of the room
+     * @param from the starting date of the payment
+     * @param to the end date of the payment
      */
     public Payment(int buyerId, int renterId, int roomId, Date from, Date to)
     {
@@ -29,6 +36,16 @@ public class Payment extends Invoice
         this.from = from;
         this.to = to;
     }
+
+    /**
+     * Constructs a Payment instance with the given buyer and renter accounts, room ID, and dates.
+     *
+     * @param buyer the buyer's account
+     * @param renter the renter
+     * @param roomId the ID of the room
+     * @param from the starting date of the payment
+     * @param to the end date of the payment
+     */
     public Payment(Account buyer, Renter renter, int roomId, Date from, Date to)
     {
         super(buyer, renter);
@@ -36,12 +53,12 @@ public class Payment extends Invoice
         this.from = from;
         this.to = to;
     }
-    /* CS4
-    public String getDuration(){
-        SimpleDateFormat dateDuration = new SimpleDateFormat("dd MMMMM yyyy");
-        to.add(Calendar.DATE, 2);
-        return dateDuration.format(this.from.getTime()) + " - " + dateDuration.format(this.to.getTime());
-    }*/
+
+    /**
+     * Returns the room ID of this Payment.
+     *
+     * @return the room ID of this Payment
+     */
     public int getRoomId() {
         return this.roomId;
     }

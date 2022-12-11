@@ -13,10 +13,9 @@ import com.RizkiAwantaJordhieJSleepKM.dbjson.Serializable;
  */
 public class Invoice extends Serializable
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     public int buyerId;
     public int renterId;
-    //public String time;
     public enum RoomRating{
         NONE,
         BAD,
@@ -30,8 +29,12 @@ public class Invoice extends Serializable
     }
     public RoomRating rating;
     public PaymentStatus status;
+
     /**
      * Constructors and overloading for objects of class Invoice
+     *
+     * @param buyerId the ID of the buyer
+     * @param renterId the ID of the renter
      */
     protected Invoice(int buyerId, int renterId)
     {
@@ -42,6 +45,12 @@ public class Invoice extends Serializable
         this.status = PaymentStatus.WAITING;
     }
 
+    /**
+     * Constructs an Invoice with the given buyer and renter.
+     *
+     * @param buyer the buyer's account
+     * @param renter the renter
+     */
     public Invoice(Account buyer, Renter renter)
     {
         //super(id);
@@ -50,11 +59,11 @@ public class Invoice extends Serializable
         this.rating = RoomRating.NONE;
         this.status = PaymentStatus.WAITING;
     }
+
     /**
-     * print method used for testcae
+     * Returns a string representation of this Invoice.
      *
-     *
-     * @return    the attributes of this class
+     * @return a string containing the attributes of this Invoice
      */
     public String print()
     {

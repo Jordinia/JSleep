@@ -2,10 +2,9 @@ package com.RizkiAwantaJordhieJSleepKM;
 
 
 /**
- * Enumeration class Type - write a description of the enum class here
+ * Enumeration class Type
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Rizki Awanta Jordhie
  */
 public enum Type {
     REBATE,

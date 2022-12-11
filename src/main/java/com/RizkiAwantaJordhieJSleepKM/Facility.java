@@ -2,10 +2,9 @@ package com.RizkiAwantaJordhieJSleepKM;
 
 
 /**
- * Write a description of class Facility here.
+ * Enumeration class for facility
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Rizki Awanta Jordhie
  */
 public enum Facility {
     WiFi,

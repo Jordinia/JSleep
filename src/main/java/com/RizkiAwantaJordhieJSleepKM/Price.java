@@ -2,46 +2,45 @@ package com.RizkiAwantaJordhieJSleepKM;
 
 
 /**
- * Write a description of class Price here.
+ * This class represents the price of an item and its associated discount.
  *
- * @author (your name)
- * @version (3 - 29/09/2022)
+ * @author Rizki Awanta Jordhie
+ * @version 3 - 29/09/2022
  */
 public class Price {
 //    public double rebate;
+    /** The price of the item */
     public double price;
+
+    /** The discount applied to the item */
     public double discount;
 
+    /**
+     * Constructs a new `Price` object with the given price and no discount.
+     *
+     * @param price the price of the item
+     */
     public Price(double price){
         this.price = price;
         this.discount = 0;
-        //this.rebate = 0;
     }
+
+    /**
+     * Constructs a new `Price` object with the given price and discount.
+     *
+     * @param price the price of the item
+     * @param discount the discount applied to the item
+     */
     public Price(double price, double discount){
         this.price = price;
         this.discount = discount;
-        //this.rebate = 0; comment from CS2 PT
     }
+
+    /**
+     * Returns a string representation of this `Price` object in the form "Price= X\nDiscount= Y".
+     *
+     * @return a string representation of this `Price` object
+     */
     public String toString(){
         return "\nPrice= " + price + "\nDiscount= " + discount;
-    }
-//    public Price (double price, double rebate){ CS2 PT
-//        this.price = price;
-//        this.rebate = rebate;
-//        this.discount = 0;
-//    }
-//    private double getDiscountedPrice(){
-//        if (discount >= 100) {
-//            return 0.0;
-//        } else  {
-//            return price - (price*(discount/100.0f));
-//        };
-//    }
-//    private double getRebatedPrice(){
-//        if(rebate > price){
-//            rebate = price;
-//        }
-//        return price - rebate;
-//    }
-
-}
+    }}

@@ -4,9 +4,9 @@ package com.RizkiAwantaJordhieJSleepKM;
 import com.RizkiAwantaJordhieJSleepKM.dbjson.Serializable;
 
 /**
- * Write a description of class Complaint here.
+ * Complaint class
  *
- * @author (Rizki Awanta Jordhie)
+ * @author Rizki Awanta Jordhie
  * @version (1 - 29/09/2022)
  */
 public class Complaint extends Serializable {

@@ -2,9 +2,9 @@ package com.RizkiAwantaJordhieJSleepKM;
 
 
 /**
- * Enumeration class City - write a description of the enum class here
+ * Enumeration class City
  *
- * @author (your name here)
+ * @author Rizki Awanta Jordhie
  * @version (1 - 29/09/2022)
  */
 public enum City{
